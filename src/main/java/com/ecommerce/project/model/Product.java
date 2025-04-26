@@ -13,6 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "products")
+@ToString
 public class Product {
 
     @Id
@@ -37,7 +38,6 @@ public class Product {
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name="seller_id")
+    @JoinColumn(name = "seller_id")
     private User user;
-
 }

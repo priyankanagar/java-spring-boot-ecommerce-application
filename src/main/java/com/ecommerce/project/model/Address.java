@@ -17,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Address {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
@@ -50,12 +49,12 @@ public class Address {
     @ManyToMany(mappedBy = "addresses")
     private List<User> users = new ArrayList<>();
 
-    public Address(String buildingName, String city, String country, String pincode, String state, String street) {
+    public Address(String street, String buildingName, String city, String state, String country, String pincode) {
+        this.street = street;
         this.buildingName = buildingName;
         this.city = city;
+        this.state = state;
         this.country = country;
         this.pincode = pincode;
-        this.state = state;
-        this.street = street;
     }
 }
